@@ -1,0 +1,65 @@
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ffd6e8, #fff0f6);
+      font-family: 'Comic Sans MS', 'Trebuchet MS', cursive;
+      text-align: center;
+      color: #5a2a4a;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 25px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      max-width: 500px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 25px;
+    }
+
+    .cats-gif {
+      width: 250px;
+      max-width: 80%;
+      margin-bottom: 25px;
+    }
+
+    button {
+      font-size: 1.1em;
+      padding: 12px 22px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      margin: 10px;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .yes {
+      background: #ff6fae;
+      color: white;
+    }
+
+    .no {
+      background: #ddd;
+      color: #555;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 1.3em;
+      display: none;
+    }
