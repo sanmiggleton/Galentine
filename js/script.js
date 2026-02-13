@@ -10,7 +10,7 @@ const card = document.getElementById("card");
 
 // main gif display (the <img> inside .card)
 const mainGif = document.querySelector(".card img");
-const defaultGifSrc = mainGif ? mainGif.getAttribute("src") : "/img/cats.gif";
+const defaultGifSrc = mainGif ? mainGif.getAttribute("src") : "img/cats.gif";
 
 // ---------- GIF swap (with transition) ----------
 function swapMainGif(newSrc) {
