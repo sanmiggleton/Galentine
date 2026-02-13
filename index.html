@@ -1,34 +1,97 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Be My Valentine? 💖</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Valentine's Card</title>
 </head>
+
 <body>
-  <div class="card">
-    <img src="cats.gif" alt="Cute cuddling cats" class="cats-gif" />
-    <h1>Will you be my Galentine?</h1>
-    <p>And spend the day with your future wife 🫶 </p>
-
-    <button class="yes" onclick="sayYes()">Yes 💕</button>
-    <button class="no" onclick="sayNo()">No 😿</button>
-
-    <div id="message" class="message"></div>
+  <!-- subtle floating bits -->
+  <div class="floaters" aria-hidden="true">
+    <span class="floater">💗</span><span class="floater">✨</span><span class="floater">💞</span>
+    <span class="floater">🌸</span><span class="floater">💗</span><span class="floater">✨</span>
+    <span class="floater">💞</span><span class="floater">🌸</span><span class="floater">💗</span>
   </div>
 
-  <script>
-    function sayYes() {
-      const msg = document.getElementById('message');
-      msg.style.display = 'block';
-      msg.innerHTML = 'YAY!! 😻💖 You just made this the purr-fect Valentine\'s Day! 🐾✨';
-    }
+  <main class="container">
+    <div class="card" id="card">
+      <!-- main gif display -->
+      <img id="mainGif" src="img/cats.gif" alt="Cute cats asking you out">
 
-    function sayNo() {
-      const msg = document.getElementById('message');
-      msg.style.display = 'block';
-      msg.innerHTML = 'Oh no 😿 the cats are judging you... (but they still like you) 🐱';
-    }
-  </script>
+      <h1>Will you be my Valentine, future wife 🫶</h1>
+
+      <div class="buttons" id="buttons">
+        <button class="btn btn-yes" id="yesButton" type="button">Yes 💕</button>
+        <button class="btn btn-no" id="noButton" type="button">No 😿</button>
+      </div>
+
+      <p class="response" id="responseText"></p>
+
+      <!-- appears after YES -->
+      <button class="btn btn-plan hidden" id="planButton" type="button">
+        What does the purr-fect day look like?
+      </button>
+    </div>
+
+    <!-- expands below after plan button -->
+    <section class="timeline-wrap hidden" id="timelineWrap" aria-label="Our Day Timeline">
+      <h2 class="section-title">Okay… here’s the plan 🐾</h2>
+      <p class="section-subtitle">Tap to reveal each stop.</p>
+
+      <ol class="timeline" id="timeline">
+        <li class="stop" data-index="0">
+          <button class="stop-reveal" type="button">Stop 1: click to reveal</button>
+
+          <div class="stop-details hidden">
+            <div class="dot" aria-hidden="true"></div>
+            <div class="stop-card">
+              <div class="stop-text">
+                <div class="stop-title">Stop 1: Cozy café study date</div>
+                <div class="stop-desc">Coffee, snacks, and we lock in… together.</div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="stop is-hidden" data-index="1">
+          <button class="stop-reveal" type="button">Stop 2: click to reveal</button>
+
+          <div class="stop-details hidden">
+            <div class="dot" aria-hidden="true"></div>
+            <div class="stop-card">
+              <div class="stop-text">
+                <div class="stop-title">Stop 2: Homemade steak + pasta dinner</div>
+                <div class="stop-desc">Cozy kitchen vibes, chef mode activated.</div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li class="stop is-hidden" data-index="2">
+          <button class="stop-reveal" type="button">Stop 3: click to reveal</button>
+
+          <div class="stop-details hidden">
+            <div class="dot" aria-hidden="true"></div>
+            <div class="stop-card">
+              <div class="stop-text">
+                <div class="stop-title">Stop 3: Crafts & movie night</div>
+                <div class="stop-desc">Glue sticks, laughs, and a comfy blanket.</div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ol>
+
+      <button class="final-button hidden" id="finalButton" type="button">
+        Excited to spend the day with you 🫶☺️
+        <span class="final-hint">Tap for more hearts 💗</span>
+      </button>
+    </section>
+  </main>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
